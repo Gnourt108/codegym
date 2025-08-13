@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Market Research Survey</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit&family=Playwrite+HU:wght@100..400&display=swap" rel="stylesheet">
+  <style>
+    .money-input{
+      display: flex;
+      align-items: center;
+    }
+    .money-input span{
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      margin-top: 2px;
+      padding: 0 3px;
+    }
+    .money-labels {
+      display: flex;
+      gap: 31px;
+      font-size: 12px;
+      margin-top: 2px;
+      padding: 0 3px;
+      margin-left: 10px;
+      color: #a1a1a1;
+    }
+    table {
+      border-collapse: collapse;
+      border: 1px solid gray;
+    }
+    td, th {
+      padding: 15px;
+      text-align: center;
+      vertical-align: middle;
+      border: 1px solid gray;
+    }
+    th:not(:first-child){
+      width: 100px;
+    }
+    td:first-child, .td:first-child {
+      text-align: left;
+    }
+
+    tr:nth-child(odd){
+      background-color: #e3e3e3;
+    }
+    tr:nth-child(even){
+      background-color: #ffffff;
+    }
+
+    input[type="submit"]{
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #B3D4FC;
+      border: none;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+      box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    }
+    input[type="submit"]:hover{
+      background-color: white;
+      cursor: pointer;
+      transform: scale(1.14);
+    }
+    input[type="submit"]:active{
+      transform: scale(1.5);
+    }
+    .head_form{
+      background-color: #b3d4fc;
+      padding: 10px;
+    }
+    .container {
+      width: 700px;
+      margin: 0 auto;
+      font-family: "EB Garamond", serif;
+      font-optical-sizing: auto;
+      font-weight: <weight>;
+      font-style: normal;
+    }
+    form{
+      padding: 20px;
+      background-color: #7fb7f4;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="head_form">
+    <h1>Market Research Survey</h1>
+    <p>Please take a few moments to complete this satisfaction survey</p>
+  </div>
+  <form action="#" method="post">
+    <p><b>What is your age?</b></p>
+    <input type="number" id="age" name="age" min="18" max="24">
+    <p><b>What is your yearly income range?</b></p>
+    <input type="number" id="income" name="income" min="0" max="25000" step="1000">
+    <p><b>Gender</b></p>
+    <input type="radio" name="gender"> Male<br>
+    <input type="radio" name="gender"> Female<br>
+    <p><b>Which of the following products have your purchased in the last 2 months. Please check all that apply</b></p>
+    <input type="checkbox" name="productCheckbox"> Product 1<br>
+    <input type="checkbox" name="productCheckbox"> Product 2<br>
+    <input type="checkbox" name="productCheckbox"> Product 3<br>
+    <p><b>How often would you see our new product?</b></p>
+    <input type="radio" name="daily"> Daily<br>
+    <input type="radio" name="daily"> Weekly<br>
+    <input type="radio" name="daily"> Monthly<br>
+    <p><b>What would you pay for the new product?</b></p>
+    <div>
+      <div class="money-input">
+        <span>$</span>
+        <input type="number" name="dollars" style="width: 50px">
+        <span>.</span>
+        <input type="number" name="cents" style="width: 30px">
+      </div>
+      <div class="money-labels">
+        <span>Dollars</span>
+        <span>Cents</span>
+      </div>
+    </div>
+    <p><b>What features would you like to see in the new product.</b></p>
+    <textarea style="width: 50%"></textarea>
+    <p>Please rate your level of agreement with the following statements</p>
+    <table>
+      <tr>
+        <th></th>
+        <th>Strongly Disagree</th>
+        <th>Disagree</th>
+        <th>Agree</th>
+      </tr>
+      <tr>
+        <td><b>Our product are priced fairly</b></td>
+        <td><input type="radio" name="rate">1</td>
+        <td><input type="radio" name="rate">2</td>
+        <td><input type="radio" name="rate">3</td>
+      </tr>
+      <tr>
+        <td><b>Our product are high quality</b></td>
+        <td><input type="radio" name="rate">1</td>
+        <td><input type="radio" name="rate">2</td>
+        <td><input type="radio" name="rate">3</td>
+      </tr>
+      <tr>
+        <td><b>You would recommend our product to a friend or coworker</b></td>
+        <td><input type="radio" name="rate">1</td>
+        <td><input type="radio" name="rate">2</td>
+        <td><input type="radio" name="rate">3</td>
+      </tr>
+    </table>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+</body>
+</html>
