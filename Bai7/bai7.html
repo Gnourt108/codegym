@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính cước điện thoại</title>
+</head>
+<body>
+    <h1>Tính cước điện thoại cho hộ gia đình</h1>
+    <table>
+        <tr>
+            <td>Phí gói: (VNĐ)</td>
+            <td><input type="number" id="F" placeholder="Nhập phí gói tại đây"></td>
+        </tr>
+        <tr>
+            <td>Phút đã dùng: </td>
+            <td><input type="number" id="min" placeholder="Nhập số phút đã dùng tại đây"></td>
+        </tr>
+        <tr>
+            <td>SMS đã gửi: </td>
+            <td><input type="number" id="sms" placeholder="Nhập số sms đã gửi tại đây"></td>
+        </tr>
+        <tr>
+            <td>Số data đã dùng (GB): </td>
+            <td><input type="number" id="data" placeholder="Nhập số data đã dùng tại đây"></td>
+        </tr>
+        <tr>
+            <td><button id="check" onclick="tinhCuoc()">Tính số cước</button></td>
+            <td><p class="result"></p></td>
+        </tr>
+    </table>
+</body>
+</html>
+<script src="bai7.js"></script>
