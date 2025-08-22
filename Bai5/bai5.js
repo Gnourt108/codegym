@@ -1,21 +1,21 @@
-function check(){
-    let testScore = Number(document.getElementById("testScore").value);
-    let midtermGrade = Number(document.getElementById("midtermGrade").value);
-    let finalGrade = Number(document.getElementById("finalGrade").value);
-    if(testScore < 0 || testScore > 10 || midtermGrade < 0 || midtermGrade > 10 || finalGrade < 0 || finalGrade > 10) {
-        alert("Grade must be greater than 0 and less than 10");
-    }else{
-        let avg = (testScore + midtermGrade * 2 + finalGrade * 3)/6;
-        if(avg < 3.5){
-            alert(`${avg.toFixed(2)} is : Least student`);
-        }else if(avg < 5){
-            alert(`${avg.toFixed(2)} is : Weak student`);
-        }else if(avg < 6.5){
-            alert(`${avg.toFixed(2)} is : Average student`);
-        }else if(avg < 8){
-            alert(`${avg.toFixed(2)} is : Good student`);
-        }else{
-            alert(`${avg.toFixed(2)} is : Excellent student`);
-        }
+function calculate(){
+    let edge1 = Number(document.getElementById('edge1').value);
+    let edge2 = Number(document.getElementById('edge2').value);
+    let result;
+    if(isNaN(edge1) || isNaN(edge2)){
+        alert("Vui lòng nhập số!")
+        return;
     }
+    if(edge1 < 0 || edge2 < 0){
+        alert("Nhập cạnh có giá trị lớn hơn 0");
+        reset()
+    }else{
+        result = (edge1 * edge2)/2;
+        document.getElementsByClassName("result")[0].innerHTML = `Diện tích hình tam giác vuông có cạnh thứ nhất bằng ${edge1} và cạnh thứ hai bằng ${edge2} là : ${result.toFixed(2)}`;
+    }
+}
+
+function reset(){
+    document.getElementById('edge1').value = "";
+    document.getElementById('edge2').value = "";
 }

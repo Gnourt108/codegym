@@ -2,32 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Tính cước điện thoại</title>
+    <title>Giải phương trình bậc 2</title>
 </head>
 <body>
-    <h1>Tính cước điện thoại cho hộ gia đình</h1>
-    <table>
-        <tr>
-            <td>Phí gói: (VNĐ)</td>
-            <td><input type="number" id="F" placeholder="Nhập phí gói tại đây"></td>
-        </tr>
-        <tr>
-            <td>Phút đã dùng: </td>
-            <td><input type="number" id="min" placeholder="Nhập số phút đã dùng tại đây"></td>
-        </tr>
-        <tr>
-            <td>SMS đã gửi: </td>
-            <td><input type="number" id="sms" placeholder="Nhập số sms đã gửi tại đây"></td>
-        </tr>
-        <tr>
-            <td>Số data đã dùng (GB): </td>
-            <td><input type="number" id="data" placeholder="Nhập số data đã dùng tại đây"></td>
-        </tr>
-        <tr>
-            <td><button id="check" onclick="tinhCuoc()">Tính số cước</button></td>
-            <td><p class="result"></p></td>
-        </tr>
-    </table>
+  <h1>Giải phương trình bậc 2</h1>
+  <table>
+    <tr>
+      <td>Nhập số thông số thứ nhất(a): </td>
+      <td><input type="number" id="a"></td>
+    </tr>
+    <tr>
+      <td>Nhập số thông số thứ hai(b): </td>
+      <td><input type="number" id="b"></td>
+    </tr>
+    <tr>
+      <td>Nhập số thông số thứ ba(c): </td>
+      <td><input type="number" id="c"></td>
+    </tr>
+    <tr>
+      <td><button onclick="calculate()">Tính</button></td>
+      <td><button onclick="reset()">Reset</button></td>
+    </tr>
+  </table>
+  <p class="result"></p>
 </body>
 </html>
 <script src="bai7.js"></script>

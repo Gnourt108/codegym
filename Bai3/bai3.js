@@ -1,10 +1,19 @@
-function checkNumber(){
-    let number = Number(document.getElementById("number").value);
-    if(number > 0){
-        alert(`${number} is greater than 0`)
-    }else if(number < 0){
-        alert(`${number} is less than 0`)
-    }else{
-        alert(`${number} equal 0`)
+function calculate(){
+    let edge = Number(document.getElementById('edge').value);
+    let result;
+    if(isNaN(edge)){
+        alert("Vui lòng nhập số!");
+        return;
     }
+    if(edge < 0){
+        alert("Nhập cạnh có giá trị lớn hơn 0");
+        reset()
+    }else{
+        result = Math.pow(2, edge);
+        document.getElementsByClassName("result")[0].innerHTML = `Diện tích hình vuông cạnh bằng ${edge} là : ${result}`;
+    }
+}
+
+function reset(){
+    document.getElementById('edge').value = "";
 }

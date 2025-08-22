@@ -2,14 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Calculate commission amount</title>
+    <title>Giải phương trình bậc 1</title>
 </head>
 <body>
-  <h1>Calculate commission amount</h1>
-  <p>Enter amount: </p>
-  <input type="number" id="amount" placeholder="Enter amount here">
-  <button id="check" onclick="check()">Check</button>
-  <p class="result"></p>
+    <h1>Giải phương trình bậc 1</h1>
+    <table>
+        <tr>
+            <td>Nhập tham số thứ nhất (a):</td>
+            <td><input type="number" id="a"></td>
+        </tr>
+        <tr>
+            <td>Nhập tham số thứ hai (b):</td>
+            <td><input type="number" id="b"></td>
+        </tr>
+        <tr>
+            <td><button onclick="calculate()">Tính</button></td>
+            <td><button onclick="reset()">Reset</button></td>
+        </tr>
+    </table>
+    <p class="result"></p>
 </body>
 </html>
 <script src="bai6.js"></script>

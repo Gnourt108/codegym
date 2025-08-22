@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính lãi suất hàng tháng </title>
+</head>
+<body>
+    <h1>Tính lãi suất hàng tháng</h1>
+    <table>
+        <tr>
+            <td>Nhập số tiền: </td>
+            <td><input type="number" id="money" placeholder="Nhập số tiền tại đây"></td>
+        </tr>
+        <tr>
+            <td>Kỳ hạn gửi: </td>
+            <td>
+                <select id="term">
+                    <option value="1">1 tháng</option>
+                    <option value="3">3 tháng</option>
+                    <option value="6">6 tháng</option>
+                    <option value="12">12 tháng</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><button onclick="calculate()">Tính lãi suất</button></td>
+            <td><button onclick="reset()">Reset</button></td>
+        </tr>
+    </table>
+    <div id="result" style="margin-top:20px; font-weight:bold;"></div>
+</body>
+</html>
+<script src="bai12.js"></script>

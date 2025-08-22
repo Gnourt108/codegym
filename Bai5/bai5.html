@@ -2,27 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Student checking program</title>
+    <title>Tính diện tích tam giác vuông</title>
 </head>
 <body>
-  <h1>Student checking program</h1>
+  <h1>Tính diện tích hình tam giác vuông</h1>
   <table>
     <tr>
-      <td>Enter test score: </td>
-      <td><input type="number" id="testScore" placeholder="Enter test score here"></td>
+      <td><label>Nhập độ dài cạnh thứ nhất của tam giác vuông: </label></td>
+      <td><input type="number" id="edge1"></td>
     </tr>
     <tr>
-      <td>Enter midterms grade: </td>
-      <td><input type="number" id="midtermGrade" placeholder="Enter midterm grade here"></td>
+      <td><label>Nhập độ dài cạnh thứ hai của tam giác vuông: </label></td>
+      <td><input type="number" id="edge2"></td>
     </tr>
     <tr>
-      <td>Enter final grade: </td>
-      <td><input type="number" id="finalGrade" placeholder="Enter final grade here"></td>
-    </tr>
-    <tr>
-      <td><button id="check" onclick="check()">Check</button></td>
+      <td><button onclick="calculate()">Tính</button></td>
+      <td><button onclick="reset()">Reset</button></td>
     </tr>
   </table>
+  <p class=result></p>
 </body>
 </html>
 <script src="bai5.js"></script>
