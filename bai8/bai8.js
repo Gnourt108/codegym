@@ -1,34 +1,21 @@
-function play(){
-    let min = Number(prompt("Bạn muốn đoán từ số nào? (Nhập số nhỏ nhất trong dãy số):"));
-    let max = Number(prompt("Bạn muốn số lớn nhất trong dãy là số nào?"));
+let arr = [];
 
-    if(isNaN(min) || isNaN(max) || min >= max) {
-        alert("Khoảng nhập không hợp lệ!");
-        return;
+function display(){
+    let numb = Number(document.getElementById('number').value);
+    let i;
+    for(i = 0; i < numb; i++){
+        let numb = Number(prompt(`Nhập số thứ ${i + 1}: `));
+        arr.push(numb);
     }
+    document.getElementsByClassName("array")[0].innerHTML = `Mảng bạn nhập là: ${arr.join(", ")}`;
+}
 
-    let secret = Math.floor(Math.random() * (max - min + 1)) + min;
+function sortDown(){
+    arr.sort((a, b) => b - a);
+    document.getElementsByClassName("result")[0].innerHTML = `Mảng giảm dần: ${arr.join(", ")}`;
+}
 
-    let attemps = 3;
-    let i =1;
-    let guess;
-    for(i = 1; i<=attemps; i ++){
-        guess = parseInt(prompt(`Lần ${i}/3 - Mời bạn nhập số: `));
-
-        if(isNaN(guess)){
-            alert("Bạn nhập không phải là số!");
-            i--; //không tính lượt này
-            continue;
-        }
-
-        if(guess === secret){
-            alert(`Chúc mừng! Bạn đã đoán trúng số bí mật là:${secret}`);
-            return;
-        }else if(guess > secret){
-            alert("Số bạn đoán lớn hơn số bí mật!");
-        }else{
-            alert("Số bạn đoán nhỏ hơn số bí mật!");
-        }
-    }
-    document.getElementsByClassName("result")[0].innerHTML = `Đã hết lượt đoán! Đáp án đúng là: ${secret}`;
+function sortUp(){
+    arr.sort((a, b) => a - b);
+    document.getElementsByClassName("result")[1].innerHTML = `Mảng tăng dần: ${arr.join(", ")}`;
 }
