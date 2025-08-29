@@ -1,21 +1,20 @@
-function calculate(){
-    let number = Number(document.getElementById('number').value);
-    let display = document.getElementsByClassName('display')[0];
-    display.innerHTML = "";
-    if(isNaN(number)){
-        alert("Vui lòng nhập số");
-        return;
+function display(){
+    let numb = Number(document.getElementById('number').value);
+    let arr = [];
+    let i;
+    for(i = 0; i < numb; i++){
+        let numb = Number(prompt(`Nhập số thứ ${i + 1}: `));
+        arr.push(numb);
     }
-    let i, i1 = 0, i2 = 1, next, sum = 0;
-    for(i = 1; i <= number; i++){
-        display.innerHTML += `${i1} <br>`
-
-        sum += i1;
-        next = i1 + i2;
-        i1 = i2;
-        i2 = next;
-
+    let count = 0;
+    let soNguyenAm = []
+    for(i = 0; i < arr.length; i++){
+        if(arr[i] < 0){
+            count++;
+            soNguyenAm.push(arr[i]);
+        }
     }
-    document.getElementsByClassName("result")[0].innerHTML = `Tổng của ${number} fibonacci đầu tiên là: ${sum}`;
-
+    document.getElementsByClassName("array")[0].innerHTML = `Mảng bạn nhập là: ${arr.join(", ")}`;
+    document.getElementsByClassName('result')[0].innerHTML = `Tổng số nguyên âm trong mảng là: ${count} <br>
+                                                                         Các số nguyên âm có trong mảng là: ${soNguyenAm.join(", ")} <br>`;
 }

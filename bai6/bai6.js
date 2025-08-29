@@ -1,24 +1,30 @@
-function calculate(){
-    let number = Number(document.getElementById("number").value);
-    let display = document.getElementsByClassName("display")[0]
-    display.innerHTML = "";
-    let kq;
-    if(isNaN(number)){
-        alert("Vui lòng nhập một số!");
-        return;
-    }
-    let i, sum = 0;
-    for(i = 1; i <= number; i++){
-        kq = i * 7
-        sum += kq;
-        display.innerHTML += `${kq} <br>`
-    }
-    document.getElementsByClassName("result")[0].innerHTML = `Tổng ${number} các số đầu tiên chia hết cho 7 là: ${sum}`
+let arr = [];
 
+function display(){
+    let numb = Number(document.getElementById('number').value);
+    let i;
+    for(i = 0; i < numb; i++){
+        let numb = Number(prompt(`Nhập số thứ ${i + 1}: `));
+        arr.push(numb);
+    }
+    document.getElementsByClassName("array")[0].innerHTML = `Mảng bạn nhập là: ${arr.join(", ")}`;
 }
 
-function reset(){
-    document.getElementById("number").value = "";
-    document.getElementsByClassName("display")[0].innerHTML = "";
-    document.getElementsByClassName("result")[0].innerHTML = "";
+function find(){
+    let x = Number(document.getElementById('find').value);
+    let position = [];
+    let i;
+    for(i = 0; i < arr.length; i++){
+        if(arr[i] === x){
+            position.push(i + 1);
+        }
+    }
+
+    if(position.length > 0){
+        document.getElementsByClassName("result")[0].innerHTML =
+            `Tìm thấy số <b>${x}</b> ở vị trí: ${position.join(", ")}`;
+    } else {
+        document.getElementsByClassName("result")[0].innerHTML =
+            `Không tìm thấy số <b>${x}</b> trong mảng.`;
+    }
 }
