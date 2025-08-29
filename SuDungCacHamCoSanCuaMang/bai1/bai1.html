@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+    <p class="result"></p>
+</body>
+</html>
+<script>
+    let n = Number(prompt("Bạn muốn nhập bao nhiêu màu: "));
+    n = parseInt(n);
+    let colorArray = [];
+    for (let i = 0; i < n; i++) {
+        let color = prompt(`Nhập màu thứ ${i+1}: `);
+        colorArray.push(color);
+    }
+    document.getElementsByClassName("result")[0].innerHTML = `Các màu sắc bạn nhập là: ${colorArray.join(', ')}`;
+</script>
