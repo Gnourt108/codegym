@@ -1,30 +1,22 @@
-let arr = [];
-
-function display(){
-    let numb = Number(document.getElementById('number').value);
-    let i;
-    for(i = 0; i < numb; i++){
-        let numb = Number(prompt(`Nhập số thứ ${i + 1}: `));
-        arr.push(numb);
+function check(){
+    let number = +document.getElementById("number").value;
+    let arr = []
+    let i, n
+    for (i = 0; i < number; i++) {
+        n = prompt(`Nhập ký tự thứ ${i+1}: `);
+        if(n.length !== 1 || !n){
+            alert("Chỉ được nhập một ký tự")
+            i--;
+        }else{
+            arr.push(n);
+        }
     }
-    document.getElementsByClassName("array")[0].innerHTML = `Mảng bạn nhập là: ${arr.join(", ")}`;
-}
-
-function find(){
-    let x = Number(document.getElementById('find').value);
-    let position = [];
-    let i;
-    for(i = 0; i < arr.length; i++){
-        if(arr[i] === x){
-            position.push(i + 1);
+    document.getElementsByClassName("array")[0].innerHTML = `Mảng vừa nhập là: ${arr.join(" ")}`;
+    for (i = 0; i < arr.length; i++){
+        if(arr[i]=== "-"){
+            arr[i] = "_"
         }
     }
 
-    if(position.length > 0){
-        document.getElementsByClassName("result")[0].innerHTML =
-            `Tìm thấy số <b>${x}</b> ở vị trí: ${position.join(", ")}`;
-    } else {
-        document.getElementsByClassName("result")[0].innerHTML =
-            `Không tìm thấy số <b>${x}</b> trong mảng.`;
-    }
+    document.getElementsByClassName("result")[0].innerHTML = `Mảng sau khi chuyển đổi là: ${arr.join(" ")}`;
 }

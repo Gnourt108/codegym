@@ -1,16 +1,15 @@
-function display(){
-    let numb = Number(document.getElementById("number").value);
-    let i, so;
-    let arr = [];
-    let arr_reserve = [];
-    for(i=0;i<numb;i++){
-        so = Number(prompt(`Nhập số thứ ${i + 1}: `));
-        arr.push(so);
+function count(){
+    let textInput = document.getElementById('textInput').value.trim();
+    if(textInput === ''){
+        document.getElementsByClassName('result')[0].innerHTML = 'Chuỗi bạn nhập không có số từ nào!';
+        return;
     }
 
-    for(i=arr.length-1;i>=0;i--){
-        arr_reserve.push(arr[i]);
-    }
-    document.getElementsByClassName("before")[0].innerHTML += arr.join(", ");
-    document.getElementsByClassName("after")[0].innerHTML += arr_reserve.join(", ");
+    let words = textInput.split(/\s+/);
+// \s = một khoảng trắng (space, tab, xuống dòng).
+//  \s+ = một hoặc nhiều khoảng trắng liên tiếp.
+//  split(/\s+/) = tách chuỗi thành các từ, bỏ qua khoảng trắng thừa.
+
+    document.getElementsByClassName("result")[0].innerText = "Số từ trong chuỗi là: " + words.length;
+
 }

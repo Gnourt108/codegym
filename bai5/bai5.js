@@ -1,20 +1,9 @@
-function display(){
-    let numb = Number(document.getElementById('number').value);
-    let arr = [];
-    let i;
-    for(i = 0; i < numb; i++){
-        let numb = Number(prompt(`Nhập số thứ ${i + 1}: `));
-        arr.push(numb);
+function compare(){
+    let arr1 = document.getElementById("array1").value;
+    let arr2 = document.getElementById("array2").value;
+    if(arr1 === arr2){
+        document.getElementsByClassName("result")[0].innerText = "Hai chuỗi giống nhau";
+    } else {
+        document.getElementsByClassName("result")[0].innerText = "Hai chuỗi khác nhau";
     }
-    let count = 0;
-    let soNguyenAm = []
-    for(i = 0; i < arr.length; i++){
-        if(arr[i] < 0){
-            count++;
-            soNguyenAm.push(arr[i]);
-        }
-    }
-    document.getElementsByClassName("array")[0].innerHTML = `Mảng bạn nhập là: ${arr.join(", ")}`;
-    document.getElementsByClassName('result')[0].innerHTML = `Tổng số nguyên âm trong mảng là: ${count} <br>
-                                                                         Các số nguyên âm có trong mảng là: ${soNguyenAm.join(", ")} <br>`;
 }

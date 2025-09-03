@@ -1,21 +1,20 @@
-function display(){
-    let n = Number(document.getElementById("number").value);
-    let arr = [];
-    let i;
-    let number;
-    for(i = 0; i < n; i++){
-        number = Number(prompt(`Nhập số nguyên thứ ${i+1}: `));
-        number = parseInt(number);
-        arr.push(number);
-    }
-    let count = 0;
-    for(i = 0; i < arr.length; i++){
-        if(arr[i] > 10){
-            count++;
+function input(){
+    let rows = Number(prompt("Nhập số lượng hàng: "));
+    let cols = Number(prompt("Nhập số lượng cột: "));
+    let a = []
+    let i, j, n;
+    for(i = 0 ; i < rows; i++) {
+        a[i] = [];
+        for (j = 0 ; j < cols; j++) {
+            a[i][j] = Number(prompt(`Nhập phần tử [${i}][${j}]: `));
         }
     }
 
-    document.getElementsByClassName("result")[0].innerHTML = "Mảng vừa nhập là: "+ arr.join(", ");
-    document.getElementsByClassName("count")[0].innerHTML = "Tổng các số lớn hơn 10 là: "+count;
-
+    //In mảng
+    for(i = 0 ; i < cols; i++) {
+        document.write("row "+i+"<br>");
+        for (j = 0 ; j < cols; j++) {
+            document.write(" "+a[i][j] + "<br>");
+        }
+    }
 }
