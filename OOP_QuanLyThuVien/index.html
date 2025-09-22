@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Outfit&family=Playwrite+HU:wght@100..400&display=swap" rel="stylesheet">
+  <title>THƯ VIỆN CỦA GNOURT</title>
+  <style>
+    body {
+        font-family: "Oswald", sans-serif;
+        background: #DAE2F8;
+        background: -webkit-linear-gradient(to right, #D6A4A4, #DAE2F8);
+        background: linear-gradient(to right, #D6A4A4, #DAE2F8);
+    }
+    h1, h2 { 
+        text-align: center;
+    }
+    table { 
+        width: 100%; 
+        border-collapse: collapse; 
+        margin-top: 10px; 
+    }
+
+    th, td { 
+        border: 1px solid #ccc; 
+        padding: 8px; 
+        text-align: center; 
+    }
+    th { 
+        background: #3498db; 
+        color: white; 
+    }
+    .warning { 
+        background: #f8d7da; 
+        color: #721c24; 
+        font-weight: bold; 
+    }
+    .container { 
+        max-width: 1100px; 
+        margin: auto; 
+        background: white; 
+        padding: 20px; 
+        border-radius: 50px;
+    }
+
+    .row-section{
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+    .form-section, .search-section, .borrow-section, .search-borrow-section {
+        flex: 1;
+        background-color: white;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+    }
+    input, select, button { 
+        padding: 6px; 
+        margin: 3px; 
+    }
+    button { 
+        cursor: pointer;
+    }
+    .logo{
+        object-fit: cover;
+        height: 55px;
+        width: 250px;
+        display: block;
+        margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+<img src="img.png" class="logo">
+  <h1>THƯ VIỆN CỦA GNOURT</h1>
+  <div class="container">
+      <h2>QUẢN LÝ ĐẦU SÁCH</h2>
+      <div class="row-section">
+          <div class="form-section">
+              <form id="addBookForm">
+                  <table>
+                      <tr>
+                          <th colspan="2">THÊM MỚI SÁCH</th>
+                      </tr>
+                      <tr>
+                          <td><label for="category">Loại sách:</label></td>
+                          <td>
+                              <select id="category">
+                                  <option>Giáo dục</option>
+                                  <option>Trinh thám</option>
+                                  <option>Cung đấu</option>
+                                  <option>Ngôn tình</option>
+                                  <option>Self-help</option>
+                                  <option>Truyện tranh</option>
+                              </select>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td><label for="title">Tiêu đề:</label></td>
+                          <td><input type="text" id="title"></td>
+                      </tr>
+                      <tr>
+                          <td><label for="author">Tác giả:</label></td>
+                          <td><input type="text" id="author"></td>
+                      </tr>
+                      <tr>
+                          <td><label for="year">Năm sản xuất:</label></td>
+                          <td><input type="number" id="year"></td>
+                      </tr>
+                      <tr>
+                          <td><label for="nation">Quốc gia:</label></td>
+                          <td><input type="text" id="nation"></td>
+                      </tr>
+                      <tr>
+                          <td><label for="age">Độ tuổi:</label></td>
+                          <td><input type="number" id="age"></td>
+                      </tr>
+                      <tr>
+                          <td><label for="quantity">Số lượng:</label></td>
+                          <td><input type="number" id="quantity"></td>
+                      </tr>
+                      <tr>
+                          <td colspan="3">
+                              <button type="button" id="btnAdd">Thêm sách</button>
+                              <button type="button" id="btnUpdate">Sửa sách</button>
+                              <button type="button" id="btnDelete">Xóa sách</button>
+                          </td>
+                      </tr>
+                  </table>
+              </form>
+          </div>
+
+          <div class="search-section">
+              <table>
+                  <tr>
+                      <th colspan="2">TÌM KIẾM SÁCH</th>
+                  </tr>
+                  <tr>
+                      <td><label>Tìm theo tiêu đề: </label></td>
+                      <td><input type="text" id="filterTitle" onkeyup="displayTable()"></td>
+                  </tr>
+                  <tr>
+                      <td><label>Loại sách: </label></td>
+                      <td>
+                          <select id="filterCategory" onchange="displayTable()">
+                              <option value="">-- Tất cả --</option>
+                              <option>Giáo dục</option>
+                              <option>Trinh thám</option>
+                              <option>Cung đấu</option>
+                              <option>Ngôn tình</option>
+                              <option>Self-help</option>
+                              <option>Truyện tranh</option>
+                          </select>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td><label>Quốc gia: </label></td>
+                      <td><input type="text" id="filterNation" onkeyup="displayTable()"></td>
+                  </tr>
+                  <tr>
+                      <td><label>Tác giả: </label></td>
+                      <td><input type="text" id="filterAuthor" onkeyup="displayTable()"></td>
+                  </tr>
+                  <tr>
+                      <td><label>Số lượng min: </label></td>
+                      <td><input type="number" id="filterMin" onkeyup="displayTable()"></td>
+                  </tr>
+                  <tr>
+                      <td><label>Số lượng max: </label></td>
+                      <td><input type="number" id="filterMax" onkeyup="displayTable()"></td>
+                  </tr>
+              </table>
+          </div>
+      </div>
+      <hr style="border: 2px solid black; opacity: 0.2;">
+    <div class="list-section">
+      <h2>Danh sách sách trong thư viện</h2>
+        <table id="bookTable">
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th>ID Sách</th>
+            <th>Tiêu đề</th>
+            <th>Loại</th>
+            <th>Tác giả</th>
+            <th>Năm</th>
+            <th>Quốc gia</th>
+            <th>Độ tuổi</th>
+            <th>Số lượng hiện có</th>
+            <th>Thao tác</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+
+      <hr style="border: 2px solid black; opacity: 0.2;">
+      <h2>Quản lý mượn – trả sách</h2>
+    <div class="row-section">
+        <div class="borrow-section">
+            <form id="borrowForm">
+                <table>
+                    <tr>
+                        <th>NỘI DUNG</th>
+                        <th>THÔNG TIN NGƯỜI MƯỢN</th>
+                    </tr>
+                    <tr>
+                        <td><label>Tên người mượn:</label></td>
+                        <td><input type="text" id="borrowerName"><br></td>
+                    </tr>
+                    <tr>
+                        <td><label>Số điện thoại người mượn:</label></td>
+                        <td><input type="text" id="borrowerNumber"><br></td>
+                    </tr>
+                    <tr>
+                        <td><label>Email người mượn (nếu có):</label></td>
+                        <td><input type="text" id="borrowerEmail"><br></td>
+                    </tr>
+                    <tr>
+                        <td><label>ID Sách:</label></td>
+                        <td><input type="text" id="borrowBookId"><br></td>
+                    </tr>
+                    <tr>
+                        <td><label>Số lượng:</label></td>
+                        <td><input type="text" id="borrowBookQuantity"><br></td>
+                    </tr>
+                    <tr>
+                        <td><label>Ngày mượn:</label></td>
+                        <td><input type="date" id="borrowDate"><br></td>
+                    </tr>
+                    <tr>
+                        <td><label>Ngày trả dự kiến:</label></td>
+                        <td><input type="date" id="returnDate"><br></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button type="button" id="btnBorrow">Mượn sách</button>
+                            <button type="button" id="btnReturn">Trả sách</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+        <div class="search-borrow-section">
+            <table>
+                <tr>
+                    <th colspan="2">TÌM KIẾM NGƯỜI MƯỢN</th>
+                </tr>
+                <tr>
+                    <td><label>ID người mượn:</label></td>
+                    <td><input type="text" id="filterBorrowerID" onkeyup="displayBorrowTable()"></td>
+                </tr>
+                <tr>
+                    <td><label>Tên người mượn:</label></td>
+                    <td><input type="text" id="filterBorrowerName" onkeyup="displayBorrowTable()"></td>
+                </tr>
+                <tr>
+                    <td><label>Số điện thoại:</label></td>
+                    <td><input type="text" id="filterBorrowerNumber" onkeyup="displayBorrowTable()"></td>
+                </tr>
+                <tr>
+                    <td><label>Email:</label></td>
+                    <td><input type="text" id="filterBorrowerEmail" onkeyup="displayBorrowTable()"></td>
+                </tr>
+                <tr>
+                    <td><label>Tên sách:</label></td>
+                    <td><input type="text" id="filterBorrowBook" onkeyup="displayBorrowTable()"></td>
+                </tr>
+                <tr>
+                    <td><label>Trạng thái:</label></td>
+                    <td>
+                        <select id="filterBorrowStatus" onchange="displayBorrowTable()">
+                            <option value="">-- Tất cả --</option>
+                            <option value="Đang mượn">Đang mượn</option>
+                            <option value="Đã trả">Đã trả</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ngày mượn:</td>
+                    <td><input type="date" id="filterBorrowDate" oninput="displayBorrowTable()"></td>
+                </tr>
+                <tr>
+                    <td>Ngày trả:</td>
+                    <td><input type="date" id="filterReturnDate" oninput="displayBorrowTable()"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+      <h2>Danh sách mượn sách</h2>
+      <table id="borrowTable">
+        <thead>
+          <tr>
+              <th>STT</th>
+              <th>ID người mượn</th>
+              <th>Số điện thoại</th>
+              <th>Email người mượn</th>
+              <th>Người mượn</th>
+              <th>ID Sách</th>
+              <th>Tiêu đề</th>
+              <th>Số lượng</th>
+              <th>Ngày mượn</th>
+              <th>Ngày trả dự kiến</th>
+              <th>Trạng thái</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
+<script src="library.js"></script>
