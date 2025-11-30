@@ -1,0 +1,348 @@
+HỆ THỐNG QUẢN LÝ NHÀ HÀNG ONLINE
+Ứng dụng quản lý đặt món ăn online với đầy đủ tính năng cho Admin, Khách hàng, Nhà hàng và Shipper.
+⚡ TÍNH NĂNG
+👤 KHÁCH HÀNG (Customer)
+✅ Đăng ký/Đăng nhập tài khoản
+✅ Xem danh sách món ăn (tất cả/giảm giá/bán chạy)
+✅ Tìm kiếm món ăn theo tên
+✅ Quản lý giỏ hàng (thêm/sửa/xóa)
+✅ Đặt hàng và thanh toán online
+✅ Xem lịch sử đơn hàng
+✅ Hủy đơn & hoàn tiền
+✅ Nạp tiền vào tài khoản
+✅ Đổi mật khẩu
+
+🍽️ NHÀ HÀNG (Restaurant)
+✅ Đăng ký/Đăng nhập tài khoản
+✅ Quản lý món ăn (Thêm/Sửa/Xóa)
+✅ Đặt chương trình giảm giá
+✅ Đánh dấu món bán chạy
+✅ Xem doanh thu
+✅ Đổi mật khẩu
+
+🏍️ SHIPPER
+✅ Đăng ký/Đăng nhập tài khoản
+✅ Xem đơn hàng chờ giao
+✅ Nhận đơn hàng
+✅ Cập nhật trạng thái giao hàng
+✅ Đổi trạng thái rảnh/bận
+✅ Xem đơn hàng của mình
+
+👨‍💼 ADMIN
+✅ Quản lý tài khoản (Xem/Tìm/Khóa/Mở khóa/Xóa)
+✅ Quản lý khách hàng
+✅ Quản lý nhà hàng
+✅ Quản lý shipper
+🍽️ HỆ THỐNG QUẢN LÝ NHÀ HÀNG ONLINE
+
+Restaurant Management System - Ứng dụng quản lý đặt món ăn online với đầy đủ tính năng cho Admin, Khách hàng, Nhà hàng và Shipper.
+
+
+📋 MỤC LỤC
+
+Giới thiệu
+Tính năng
+Công nghệ
+Cài đặt
+Cách sử dụng
+Tài khoản mẫu
+Cấu trúc dự án
+Troubleshooting
+
+
+🎯 GIỚI THIỆU
+Hệ thống quản lý nhà hàng online cho phép:
+
+Khách hàng đặt món ăn trực tuyến
+Nhà hàng quản lý thực đơn và doanh thu
+Shipper nhận và giao đơn hàng
+Admin quản trị toàn bộ hệ thống
+
+Đặc điểm nổi bật:
+✅ Quản lý tồn kho tự động
+✅ Tính toán giá sau giảm giá
+✅ Theo dõi trạng thái đơn hàng
+✅ Bảo mật với auto-lock sau 3 lần đăng nhập sai
+✅ Lưu trữ dữ liệu bằng CSV files
+
+⚡ TÍNH NĂNG
+👤 KHÁCH HÀNG (Customer)
+
+✅ Đăng ký/Đăng nhập tài khoản
+✅ Xem danh sách món ăn (tất cả/giảm giá/bán chạy)
+✅ Tìm kiếm món ăn theo tên
+✅ Quản lý giỏ hàng (thêm/sửa/xóa)
+✅ Đặt hàng và thanh toán online
+✅ Xem lịch sử đơn hàng
+✅ Hủy đơn & hoàn tiền
+✅ Nạp tiền vào tài khoản
+✅ Đổi mật khẩu
+
+🍽️ NHÀ HÀNG (Restaurant)
+
+✅ Đăng ký/Đăng nhập tài khoản
+✅ Quản lý món ăn (Thêm/Sửa/Xóa)
+✅ Đặt chương trình giảm giá
+✅ Đánh dấu món bán chạy
+✅ Xem doanh thu
+✅ Đổi mật khẩu
+
+🏍️ SHIPPER
+
+✅ Đăng ký/Đăng nhập tài khoản
+✅ Xem đơn hàng chờ giao
+✅ Nhận đơn hàng
+✅ Cập nhật trạng thái giao hàng
+✅ Đổi trạng thái rảnh/bận
+✅ Xem đơn hàng của mình
+
+👨‍💼 ADMIN
+
+✅ Quản lý tài khoản (Xem/Tìm/Khóa/Mở khóa/Xóa)
+✅ Quản lý khách hàng
+✅ Quản lý nhà hàng
+✅ Quản lý shipper
+✅ Xem thống kê hệ thống
+
+
+🛠️ CÔNG NGHỆ
+
+Ngôn ngữ: Java 17
+IDE: IntelliJ IDEA
+Lưu trữ: CSV Files
+Kiến trúc: 3-Layer (Entity - Repository - Service - View)
+Design Pattern: Repository Pattern
+
+
+📥 CÀI ĐẶT
+Yêu cầu hệ thống:
+
+Java JDK 17 trở lên
+IntelliJ IDEA (hoặc Eclipse/NetBeans)
+50MB dung lượng trống
+
+Các bước cài đặt:
+1. Clone hoặc tải project về
+bash# Giải nén file zip vào thư mục của bạn
+# Ví dụ: E:\CodeGym\Module2\RestaurantManagement\
+2. Mở project trong IntelliJ IDEA
+File > Open > Chọn thư mục project
+3. Tạo thư mục data và các file CSV
+Tạo cấu trúc:
+RestaurantManagement/
+├── src/
+├── data/                    ← Tạo thư mục này
+│   ├── customers.csv
+│   ├── restaurants.csv
+│   ├── shippers.csv
+│   ├── dishes.csv
+│   ├── orders.csv
+│   ├── carts.csv
+│   └── buynow.csv
+└── ...
+Nội dung các file CSV:
+customers.csv:
+csvidUser,userName,password,phoneNumber,address,isLocked,email,bankAccountNumber,currentRevenue
+1,customer1,123456,0901234567,123 Nguyen Hue St,false,customer1@email.com,123456789,5000000.0
+2,customer2,123456,0902345678,456 Le Loi St,false,customer2@email.com,234567890,3000000.0
+restaurants.csv:
+csvidUser,userName,password,phoneNumber,address,isLocked,hostRestaurant,totalRevenue
+1,restaurant1,123456,0911234567,100 Pasteur St,false,Nguyen Van A,15000000.0
+shippers.csv:
+csvidUser,userName,password,phoneNumber,address,isLocked,isBusy,carType
+1,shipper1,123456,0921234567,50 Cong Quynh St,false,false,Motorbike
+dishes.csv:
+csvidDish,nameDish,price,quality,isEndow,isDiscount,isBestSeller,discountDeadline
+1,Pho Bo,50000.0,100,false,0.0,true,0
+2,Banh Mi,25000.0,150,true,0.2,true,1767139200000
+orders.csv:
+csvorderID,dishIds,status,isPay,customerId
+1,"1;2;14",DELIVERED,true,1
+carts.csv:
+csvcustomerId,dishId,quantity
+buynow.csv:
+csvcustomerId,dishId,quantity
+4. Build project
+Build > Rebuild Project
+5. Chạy chương trình
+Run > Run 'Main'
+
+📖 CÁCH SỬ DỤNG
+🚀 KHỞI ĐỘNG
+Chạy file Main.java, màn hình chào mừng sẽ xuất hiện:
+╔════════════════════════════════════════╗
+║   HỆ THỐNG ĐẶT ĐỒ ĂN ONLINE            ║
+╚════════════════════════════════════════╝
+1. Đăng nhập
+2. Đăng ký
+0. Thoát
+
+👤 HƯỚNG DẪN KHÁCH HÀNG
+1. Đăng ký tài khoản
+Menu chính > 2 (Đăng ký) > 1 (Khách hàng)
+
+Nhập thông tin:
+- Tên đăng nhập: your_username
+- Mật khẩu: your_password
+- Số điện thoại: 0123456789
+- Địa chỉ: Địa chỉ của bạn
+- Email: your@email.com
+
+→ Tài khoản được tạo với số dư 1,000,000 VNĐ
+2. Xem và đặt món
+Đăng nhập > Menu Customer
+
+1. Xem danh sách món ăn
+   → Hiển thị tất cả món với giá và số lượng
+   → Có thể thêm món ngay vào giỏ hàng
+
+2. Tìm kiếm món ăn
+   → Nhập tên món (không cần chính xác)
+   → Ví dụ: "Pho" → Tìm thấy "Pho Bo"
+
+3. Xem món giảm giá
+   → Hiển thị các món đang có khuyến mãi
+
+4. Xem món bán chạy
+   → Hiển thị các món được đánh dấu bán chạy
+3. Quản lý giỏ hàng
+5. Xem giỏ hàng
+   → Hiển thị tất cả món đã thêm
+   → Tổng tiền
+
+   Có thể:
+   - Xóa món
+   - Cập nhật số lượng
+   - Xóa toàn bộ giỏ hàng
+4. Đặt hàng
+6. Đặt hàng
+   → Kiểm tra tổng tiền vs số dư
+   → Xác nhận (Y/N)
+   → Hệ thống:
+     • Tạo đơn hàng
+     • Trừ tiền
+     • Trừ tồn kho
+     • Xóa giỏ hàng
+5. Các tính năng khác
+7. Xem lịch sử đơn hàng
+   → Danh sách tất cả đơn đã đặt
+   → Trạng thái: PENDING/SHIPPING/DELIVERED/CANCELLED
+
+8. Nạp tiền
+   → Nhập số tiền cần nạp
+   → Số dư được cập nhật ngay
+
+9. Đổi mật khẩu
+   → Nhập mật khẩu cũ
+   → Nhập mật khẩu mới
+
+🍽️ HƯỚNG DẪN NHÀ HÀNG
+1. Đăng ký
+Menu chính > 2 (Đăng ký) > 2 (Nhà hàng)
+
+Nhập:
+- Tên đăng nhập
+- Mật khẩu
+- Số điện thoại
+- Địa chỉ nhà hàng
+- Tên chủ nhà hàng
+2. Quản lý món ăn
+1. Quản lý món ăn
+   → Xem danh sách tất cả món
+
+2. Thêm món mới
+   - Tên món
+   - Giá (VNĐ)
+   - Số lượng
+   → ID tự động tăng
+
+3. Xóa món
+   - Nhập tên món
+   - Xác nhận (Y/N)
+
+4. Cập nhật món
+   - Nhập ID món
+   - Cập nhật: Tên/Giá/Số lượng
+   - Enter để giữ nguyên
+3. Khuyến mãi & Marketing
+5. Đặt giảm giá cho món
+   - Nhập ID món
+   - Phần trăm giảm (0-100)
+   - Số ngày hiệu lực
+   → Tự động hết hạn sau X ngày
+
+6. Đánh dấu món bán chạy
+   - Nhập ID món
+   - 1: Đánh dấu
+   - 0: Bỏ đánh dấu
+4. Báo cáo
+7. Xem doanh thu
+   → Tổng doanh thu từ các đơn đã hoàn thành
+
+🏍️ HƯỚNG DẪN SHIPPER
+1. Đăng ký
+Menu chính > 2 (Đăng ký) > 3 (Shipper)
+
+Nhập:
+- Tên đăng nhập
+- Mật khẩu
+- Số điện thoại
+- Địa chỉ
+- Loại xe (Motorbike/Bicycle/Car)
+2. Nhận và giao đơn
+1. Xem đơn hàng chờ giao
+   → Danh sách đơn PENDING
+
+2. Nhận đơn hàng
+   - Nhập mã đơn
+   → Trạng thái: PENDING → SHIPPING
+   → Shipper: Rảnh → Bận
+
+3. Xem đơn hàng của tôi
+   → Danh sách đơn đang giao
+
+4. Cập nhật trạng thái
+   - Nhập mã đơn
+   - Chọn:
+     1. Đang giao (SHIPPING)
+     2. Đã giao (DELIVERED) → Tự động rảnh
+     3. Hủy (CANCELLED)
+
+5. Đổi trạng thái Rảnh/Bận
+   → Toggle thủ công
+
+👨‍💼 HƯỚNG DẪN ADMIN
+Đăng nhập
+Username: admin
+Password: admin123
+Quản lý người dùng
+1. Quản lý khách hàng
+   1. Xem danh sách
+   2. Tìm kiếm (theo username)
+   3. Khóa tài khoản
+   4. Mở khóa tài khoản
+   5. Xóa tài khoản
+
+2. Quản lý nhà hàng
+   (Tương tự khách hàng)
+
+3. Quản lý shipper
+   (Tương tự khách hàng)
+
+4. Xem thống kê
+   → Số lượng: Khách hàng/Nhà hàng/Shipper
+
+🔑 TÀI KHOẢN MẪU
+Admin
+Username: admin
+Password: admin123
+Khách hàng (5 tài khoản)
+Username: customer1, customer2, customer3, customer4, customer5
+Password: 123456 (tất cả)
+Số dư: 1,000,000 - 5,000,000 VNĐ
+Nhà hàng (5 tài khoản)
+Username: restaurant1, restaurant2, restaurant3, restaurant4, restaurant5
+Password: 123456 (tất cả)
+Shipper (5 tài khoản)
+Username: shipper1, shipper2, shipper3, shipper4, shipper5
+Password: 123456 (tất cả)
