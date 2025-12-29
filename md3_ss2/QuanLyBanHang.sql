@@ -1,0 +1,45 @@
+-- Tạo cơ sở dữ liệu
+CREATE DATABASE IF NOT EXISTS QuanLyBanHang CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE QuanLyBanHang;
+
+CREATE TABLE Customer (
+    cID INT PRIMARY KEY AUTO_INCREMENT,
+    cName VARCHAR(100) NOT NULL,
+    cAge INT CHECK (cAge > 0)
+);
+
+CREATE TABLE Product (
+    pID INT PRIMARY KEY AUTO_INCREMENT,
+    pName VARCHAR(100) NOT NULL,
+    pPrice DECIMAL(10,2) NOT NULL CHECK (pPrice >= 0)
+);
+
+CREATE TABLE `Order` (
+    oID INT PRIMARY KEY AUTO_INCREMENT,
+    cID INT NOT NULL,
+    oDate DATE NOT NULL,
+    oTotalPrice DECIMAL(12,2) DEFAULT NULL,  
+    CONSTRAINT FK_Order_Customer 
+        FOREIGN KEY (cID) REFERENCES Customer(cID)
+        ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE OrderDetail (
+    oID INT NOT NULL,
+    pID INT NOT NULL,
+    odQTY INT NOT NULL CHECK (odQTY > 0),
+    PRIMARY KEY (oID, pID), 
+    CONSTRAINT FK_OrderDetail_Order 
+        FOREIGN KEY (oID) REFERENCES `Order`(oID)
+        ON DELETE CASCADE 
+        ON UPDATE CASCADE,
+    CONSTRAINT FK_OrderDetail_Product 
+        FOREIGN KEY (pID) REFERENCES Product(pID)
+        ON DELETE RESTRICT 
+        ON UPDATE CASCADE
+);
+
+
+CREATE INDEX IDX_Order_cID ON `Order`(cID);
+CREATE INDEX IDX_Order_oDate ON `Order`(oDate);
+CREATE INDEX IDX_OrderDetail_pID ON OrderDetail(pID);
